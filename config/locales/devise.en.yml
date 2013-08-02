@@ -1,6 +1,7 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
 en:
+  surveys: Quizzes
   devise:
     confirmations:
       confirmed: "Your account was successfully confirmed. You are now signed in."

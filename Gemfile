@@ -11,7 +11,7 @@ gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
 gem 'formtastic',          github: 'justinfrench/formtastic'
 gem 'survey', 			   github: 'runtimerevolution/survey'
 gem 'protected_attributes'
-
+gem 'bootstrap-sass'
 
 
 # Use sqlite3 as the database for Active Record
