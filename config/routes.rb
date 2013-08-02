@@ -1,5 +1,7 @@
 QuizApp::Application.routes.draw do
 
+  get "static_pages/home"
+  get "static_pages/help"
   namespace :quizzes do
     resources :surveys
     resources :attempts, :only => [:new, :create]
