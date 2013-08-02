@@ -1,4 +1,10 @@
 QuizApp::Application.routes.draw do
+
+  namespace :quizzes do
+    resources :surveys
+    resources :attempts, :only => [:new, :create]
+  end
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
