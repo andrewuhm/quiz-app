@@ -1,9 +1,17 @@
+<% if signed_in? %>
+	<div class="row">
+		<aside class="span4">
+			<section>Take the <%= link_to "Quiz", quizzes_surveys_path %></section>
+		</aside>
+	</div>
+<% else %>
 <div class="center hero-unit">
 	<h1>Study Guide Quizzes</h1>
 
 	<h2>Sign up now to get access to practice quizzes</h2>
 	<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 </div>
+<% end %>
 
 
 

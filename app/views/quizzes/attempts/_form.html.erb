@@ -1,4 +1,4 @@
-<h1>Survey <%= @survey.name %></h1>
+<h1><%= @survey.name %></h1>
 <%= form_for(@attempt, :url => attempt_scope(@attempt)) do |f| %>
   <%= f.fields_for :answers do |builder| %>
     <ul>

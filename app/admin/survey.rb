@@ -1,5 +1,5 @@
 ActiveAdmin.register Survey::Survey do
-  menu :label => I18n.t("surveys")
+  menu :label => proc{ I18n.t("quizzes") }
 
   filter  :name,
           :as => :select,
