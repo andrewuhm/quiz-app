@@ -12,8 +12,20 @@ describe User do
 	it { should respond_to(:password_confirmation) }
 	it { should respond_to(:remember_token) }
 	it { should respond_to(:authenticate) }
+	it { should respond_to(:admin) }
+	it { should respond_to(:attempts) }
 
 	it { should be_valid }
+	it { should_not be_admin }
+	
+	describe "with admin attribute set to 'true'" do
+	  before do
+	    @user.save!
+	    @user.toggle!(:admin)
+	  end
+	  
+	  it { should be_admin }
+	end
 
 	describe "when name is not not present" do
 		before { @user.name = " " }
@@ -98,5 +110,29 @@ describe User do
 	describe "remember token" do
 		before { @user.save }
 		its(:remember_token) { should_not be_blank }
+	end
+	
+	describe "attempt associations" do
+	  before { @user.save }
+	  let!(:old_attempt) do
+	    FactoryGirl.create(:attempt, user: @user, created_at: 1.day.ago)
+	  end
+	  let!(:new_attempt) do
+	    FactoryGirl.create(:attempt, user: @user, created_at: 1.hour.ago)
+	  end
+	  
+	  it "should have the right attempt in the right order" do
+	    expect(@user.attempts.to_a).to eq [old_attempt, new_attempt]
+	  end
+	  
+	  it "should destroy associated attempts" do
+	    attempts = @user.attempts.to_a
+	    @user.destroy
+	    expect(attempts).not_to be_empty
+	    attempts.each do |attempt|
+	      expect(Attempt.where(id: attempt.id)).to be_empty
+	    end
+	  end
+	  
 	end
 end

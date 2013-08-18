@@ -1,4 +1,11 @@
 QuizApp::Application.routes.draw do
+  get "questions/index"
+  get "questions/show"
+  get "questions/new"
+  get "questions/edit"
+  get "questions/create"
+  get "questions/update"
+  get "questions/destroy"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root 'static_pages#home'

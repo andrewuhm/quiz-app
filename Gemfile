@@ -10,8 +10,11 @@ gem 'ransack',             github: 'ernie/ransack', branch: 'rails-4'
 gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
 gem 'formtastic',          github: 'justinfrench/formtastic'
 gem 'survey', 			   github: 'runtimerevolution/survey'
+gem 'faker'
 gem 'protected_attributes'
 gem 'bootstrap-sass'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 
 # Use sqlite3 as the database for Active Record
