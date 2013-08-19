@@ -1,2 +1,10 @@
-<h1>Questions#index</h1>
-<p>Find me in app/views/questions/index.html.erb</p>
+<% provide(:title, 'All questions') %>
+<h1>All questions</h1>
+
+<p><%= link_to 'New Question', new_question_path %></p>
+
+<ul class="questions">
+	<%= render @questions %>
+</ul>
+
+<%= will_paginate %>

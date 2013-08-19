@@ -1,0 +1,6 @@
+<li>
+	<%= choice.text %>
+	<% if choice.correct %> (Correct) <% end %>
+	| <%= link_to "delete", choice, method: :delete,
+							data: { confirm: "Delete Choice?" } %>		
+</li>

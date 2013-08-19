@@ -1,11 +1,20 @@
 require 'spec_helper'
 
 describe "QuestionPages" do
-  describe "GET /question_pages" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get question_pages_index_path
-      response.status.should be(200)
+  
+  subject { page }
+  
+  describe "index" do
+    
+    let(:admin) { FactoryGirl.create(:admin) }
+    
+    before do
+      sign_in admin
+      visit questions_path
     end
+    
+    it { should have_title('All questions') }
+    it { should have_content('All questions') }
+    
   end
 end

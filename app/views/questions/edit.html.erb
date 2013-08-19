@@ -1,2 +1,5 @@
-<h1>Questions#edit</h1>
-<p>Find me in app/views/questions/edit.html.erb</p>
+<% provide(:title, "Edit question") %>
+<h1>Edit question</h1>
+
+<%= render 'form' %>
+<%= link_to 'Back', questions_path %>

@@ -1,0 +1,10 @@
+<%= form_for(@choice) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+<div class="field">
+	<%= f.hidden_field :question_id, value: @question.id %>
+	<%= f.text_area :text, placeholder: "New Answer..." %><br/>
+	<%= f.check_box :correct %> Correct?
+</div>
+<br/>
+<%= f.submit "Save Answer", class: "btn btn-large btn-primary" %>
+<% end %>

@@ -1,2 +1,6 @@
-<h1>Questions#new</h1>
-<p>Find me in app/views/questions/new.html.erb</p>
+<% provide(:title, "New question") %>
+<h1>New question</h1>
+
+<%= render 'form' %>
+<%= link_to 'Back', questions_path %>
+

@@ -1,2 +1,21 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<% provide(:title, 'Question') %>
+<h1>Question Details</h1>
+
+<p>
+	<b>Question:</b>
+	<%= @question.text %>
+</p>
+
+<h4>Choices</h4>
+<ol>
+	<%= render @choices %>
+</ol>
+
+<br/>
+<%= render 'shared/choice_form', question: @question %>
+	
+	<%= link_to 'Edit', edit_question_path(@question) %> | 
+	<%= link_to 'Back', questions_path %>
+
+
+

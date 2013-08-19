@@ -11,7 +11,7 @@ FactoryGirl.define do
 	end
 
 	factory :question do
-		question 	"Is this a question?"
+		text "Is this a question?"
 	end
 
 	factory :choice do

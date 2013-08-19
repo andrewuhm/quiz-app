@@ -1,13 +1,15 @@
 QuizApp::Application.routes.draw do
-  get "questions/index"
-  get "questions/show"
-  get "questions/new"
-  get "questions/edit"
-  get "questions/create"
-  get "questions/update"
-  get "questions/destroy"
+  # get "questions/index"
+  # get "questions/show"
+  # get "questions/new"
+  # get "questions/edit"
+  # get "questions/create"
+  # get "questions/update"
+  # get "questions/destroy"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :questions
+  resources :choices, only: [:create, :destroy]
   root 'static_pages#home'
 
   match '/help',      to: 'static_pages#help',    via: 'get'
@@ -15,13 +17,14 @@ QuizApp::Application.routes.draw do
   match '/signin',    to: 'sessions#new',         via: 'get'
   match '/signout',   to: 'sessions#destroy',     via: 'delete'
 
-  namespace :quizzes do
-    resources :surveys
-    resources :attempts, :only => [:new, :create]
-  end
+  # The following can be commented out since we're doing new quiz model
+  # namespace :quizzes do
+    # resources :surveys
+    # resources :attempts, :only => [:new, :create]
+  # end
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  # devise_for :admin_users, ActiveAdmin::Devise.config
+  # ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

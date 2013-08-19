@@ -8,6 +8,7 @@ describe Choice do
 	subject { @choice }
 	it { should respond_to(:text) }
 	it { should respond_to(:correct) }
+	it { should respond_to(:question_id) }
 	it { should respond_to(:question) }
 	its(:question) { should eq question }
 

@@ -1,0 +1,6 @@
+<li>
+	<%= question.text %>
+	| <%= link_to 'Edit', edit_question_path(question) %>
+	| <%= link_to 'Delete', question, method: :delete, 
+						data: { confirm: "Delete Question?" } %>
+</li>

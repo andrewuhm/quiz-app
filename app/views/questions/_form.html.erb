@@ -1,0 +1,10 @@
+<%= form_for(@question) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	
+	<div class="field">
+		<%= f.text_area :text, :size => "50x3", placeholder: "Question Text" %>
+	</div>
+	<br/>
+	<%= f.submit "Save", class: "btn btn-large btn-primary" %>
+
+<% end %>
