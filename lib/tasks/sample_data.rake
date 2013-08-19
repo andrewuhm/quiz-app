@@ -6,6 +6,7 @@ namespace :db do
                  password: "foobar",
                  password_confirmation: "foobar",
                  admin: true)
+                 
     99.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@railstutorial.org"
@@ -14,6 +15,17 @@ namespace :db do
                    email: email,
                    password: password,
                    password_confirmation: password)
+    end
+    
+    50.times do
+      text = Faker::Lorem.sentence(3)
+      Question.create!(text: text)
+    end
+    
+    questions = Question.all
+    4.times do
+      text = Faker::Lorem.sentence(1)
+      questions.each { |question| question.choices.build(text: text, correct: false) }
     end
   end
 end
