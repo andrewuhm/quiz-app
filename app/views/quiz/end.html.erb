@@ -1,0 +1,6 @@
+<% provide(:title, "Quiz Completed") %>
+<h1>Quiz Results</h1>
+<p id="question">You correctly answered <%= @correct %> out of <%= @total %> questions.</p>
+
+<p id="score"><%= @score %>%</p>
+<%= link_to "Try again", quiz_index_path %>

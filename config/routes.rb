@@ -1,4 +1,10 @@
 QuizApp::Application.routes.draw do
+  # get "quiz/index"
+  # get "quiz/start"
+  get "quiz/question"
+  post "quiz/question"
+  # get "quiz/answer"
+  # get "quiz/end"
   # get "questions/index"
   # get "questions/show"
   # get "questions/new"
@@ -10,12 +16,17 @@ QuizApp::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :questions
   resources :choices, only: [:create, :destroy]
+  resources :quiz, only: [:index, :question, :answer, :end]
   root 'static_pages#home'
 
-  match '/help',      to: 'static_pages#help',    via: 'get'
-  match '/signup',    to: 'users#new',            via: 'get'
-  match '/signin',    to: 'sessions#new',         via: 'get'
-  match '/signout',   to: 'sessions#destroy',     via: 'delete'
+  match '/help',        to: 'static_pages#help',    via: 'get'
+  match '/signup',      to: 'users#new',            via: 'get'
+  match '/signin',      to: 'sessions#new',         via: 'get'
+  match '/signout',     to: 'sessions#destroy',     via: 'delete'
+  match '/quiz/start',  to: 'quiz#start',           via: 'post'
+  match '/quiz/answer', to: 'quiz#answer',          via: 'post'
+  match '/quiz/end',    to: 'quiz#end',             via: 'get'
+  
 
   # The following can be commented out since we're doing new quiz model
   # namespace :quizzes do

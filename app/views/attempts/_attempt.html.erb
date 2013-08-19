@@ -1,6 +1,6 @@
 <li>
-	<span class="content">Got <%= attempt.questions_correct %> out of 
-		<%= attempt.questions_total %> right.</span>
+	<span class="content"><%= attempt.questions_correct %> out of 
+		<%= attempt.questions_total %>.</span>
 	<span class="timestamp">
 		Completed <%= time_ago_in_words(attempt.created_at) %> ago.
 	</span>

@@ -177,3 +177,28 @@ aside {
     }
   }
 }
+
+/* feedback answer page */
+.correct {
+  background-color: #64de89;
+}
+.incorrect {
+  background-color: #ff8373;
+}
+.feedback {
+  font-weight: bold; 
+  font-size: 1.2em; 
+}
+.feedback-choice {
+  margin: 0 0 5px 0;
+  font-size: 1.2em;
+  padding: 10px 5px 10px 25px;
+  border-radius: 4px;
+}
+
+#question { font-size: 1.2em; }
+#score { 
+  font-size: 2em;
+  text-align: center; 
+  font-weight: bold;
+ }
